@@ -19,7 +19,7 @@
 <br><br><br><br><br><br><br><br><br><br><br> 
     <div class="registration-container">
         <h2>Registration</h2>
-        <form action="reg.php" method="post" enctype="multipart/form-data">
+        <form action="backend/reg.php" method="post" enctype="multipart/form-data">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -40,4 +40,6 @@
 </body>
 </html>
 
-<?php include "includes/footer.php"?>
+<?php 
+// include "includes/footer.php"
+?>

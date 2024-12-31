@@ -1,11 +1,11 @@
 <?php
-include "includes/header.php";
+include "..\includes/header.php";
 // session_start();
-include "includes/db.php"; // Database connection file
+include "..\includes/db.php"; // Database connection file
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php"); // Redirect to login if not logged in
+    header("Location: ..\login.php"); // Redirect to login if not logged in
     exit();
 }
 
@@ -95,8 +95,10 @@ $conn->close();
             <h2><?= htmlspecialchars($user['username']) ?></h2>
             <p><?= htmlspecialchars($user['email']) ?></p>
         </div>
-        <a href="logout.php" class="logout-btn">Logout</a>
+        <a href="..\logout.php" class="logout-btn">Logout</a>
     </div>
 </body>
 </html>
-<?php include "includes/footer.php"; ?>
+<?php 
+// include "includes/footer.php";
+ ?>

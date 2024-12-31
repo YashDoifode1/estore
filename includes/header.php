@@ -20,7 +20,7 @@ $is_logged_in = isset($_SESSION['user_id']);
         <a href="<?= APP_URL ?>/">Home</a>
         <a href="<?= APP_URL ?>/product.php">Products</a>
         <?php if ($is_logged_in): ?>
-            <a href="<?= APP_URL ?>/profile.php">Profile</a>
+            <a href="<?= APP_URL ?>/account/profile.php">Profile</a>
             <a href="<?= APP_URL ?>/logout.php">Logout</a>
         <?php else: ?>
             <a href="<?= APP_URL ?>/login.php">Login</a>

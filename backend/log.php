@@ -1,5 +1,5 @@
 <?php
-include "includes/db.php"; // Ensure the DB connection is set up
+include "..\includes/db.php"; // Ensure the DB connection is set up
 
 // Start session
 session_start();
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role']; // Store role in session
 
-            header("Location: index.php"); // Redirect to dashboard
+            header("Location: ..\index.php"); // Redirect to dashboard
             exit();
         } else {
             // Invalid password

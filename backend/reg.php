@@ -1,4 +1,4 @@
-<?php include "includes/db.php"; ?>
+<?php include "..\includes/db.php"; ?>
 
 <?php
 
@@ -11,7 +11,7 @@ $image = $_FILES['image'];
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 // Handle image upload
-$target_dir = "uploads/";
+$target_dir = "..\uploads/";
 $target_file = $target_dir . basename(preg_replace("/[^a-zA-Z0-9.]/", "", $_FILES["image"]["name"]));
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

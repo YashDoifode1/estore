@@ -17,7 +17,7 @@
 <br><br><br><br><br><br><br><br><br><br><br>  
     <div class="login-container">
         <h2>Login</h2>
-        <form action="log.php" method="post">
+        <form action="backend/log.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -34,4 +34,6 @@
 
 </html>
 
-    <?php include "includes/footer.php"?>
+    <?php 
+    // include "includes/footer.php"
+    ?>
