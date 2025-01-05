@@ -46,7 +46,7 @@ if (!$result) {
     <div>
         <h1>Welcome to E-Shop</h1>
         <p>Discover amazing deals on top products</p>
-        <a href="product.php" class="cta-button">Shop Now</a>
+        <a href="action/product.php" class="cta-button">Shop Now</a>
     </div>
 </div>
 
@@ -72,15 +72,37 @@ if (!$result) {
 </section>
 
     <!-- Featured Products -->
-    <section id="products" class="products">
-        <h2 class="section-title">Bestselling Products</h2>
-        <div class="grid">
-            <div class="card">Product 1 - $20</div>
-            <div class="card">Product 2 - $35</div>
-            <div class="card">Product 3 - $50</div>
-            <div class="card">Product 4 - $25</div>
-        </div>
-    </section>
+    <?php
+include("includes/db.php");
+
+// Fetch top 3 bestselling products (assuming order_items table tracks sales)
+$query = "
+    SELECT p.name, p.price, p.image 
+    FROM products p 
+    JOIN order_items oi ON p.id = oi.product_id 
+    GROUP BY p.id 
+    ORDER BY SUM(oi.quantity) DESC 
+    LIMIT 3
+";
+
+$result = $conn->query($query);
+?>
+
+<section id="products" class="products">
+    <h2 class="section-title">Bestselling Products</h2>
+    <div class="grid">
+        <?php while ($row = $result->fetch_assoc()) { ?>
+            <div class="card">
+                <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" class="product-img">
+                <h3><?php echo $row['name']; ?></h3>
+                <p>$<?php echo number_format($row['price'], 2); ?></p>
+                <a href="action/product.php" class="view-more-btn">View More</a>
+            </div>
+            
+        <?php } ?>
+    </div>
+</section>
+
 
    
   

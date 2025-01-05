@@ -3,8 +3,8 @@
 // session_start();
 
 // Include header and database connection
-include "includes/header.php";
-include "includes/db.php";
+include "..\includes/header.php";
+include "..\includes/db.php";
 
 if (!isset($_SESSION['user_id'])) { // Replace 'user_id' with the session variable you want to check
     // Redirect to the login page using the APP_URL
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Checkout</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2>Checkout</h2>
     <?php foreach ($cart_items as $item): ?>
         <div class="product-details">
-            <img src="<?= htmlspecialchars($item['image']); ?>" alt="<?= htmlspecialchars($item['name']); ?>">
+            <img src="..\<?= htmlspecialchars($item['image']); ?>" alt="<?= htmlspecialchars($item['name']); ?>">
             <div class="product-info">
                 <h4><?= htmlspecialchars($item['name']); ?></h4>
                 <p><?= htmlspecialchars($item['description']); ?></p>
@@ -197,5 +197,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 // Include footer
-// include "includes/footer.php";
+// include "..\includes/footer.php";
 ?>

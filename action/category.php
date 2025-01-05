@@ -1,7 +1,7 @@
 <?php
 // Database connection
-include 'includes/header.php';
-include 'includes/db.php';
+include '..\includes/header.php';
+include '..\includes/db.php';
 
 // Get the category id from the URL
 $category_id = isset($_GET['id']) ? $_GET['id'] : 0;
@@ -33,7 +33,7 @@ if ($category_result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $category_name; ?> - Category</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>/* Category Header Image */
 .category-header {
     text-align: center;
@@ -86,7 +86,8 @@ if ($category_result->num_rows > 0) {
             // Output products in this category
             while ($product = $product_result->fetch_assoc()) {
                 echo '<div class="card">';
-                echo '<img src="' . $product["image"] . '" alt="' . $product["name"] . ' Image" class="product-image">';
+                echo '<img src="../' . htmlspecialchars($product["image"]) . '" alt="' . htmlspecialchars($product["name"]) . ' Image" class="product-image">';
+
                 echo '<h3>' . $product["name"] . '</h3>';
                 echo '<p>Price: $' . $product["price"] . '</p>';
                 echo '<a href="product.php?id=' . $product["id"] . '">View Product</a>';

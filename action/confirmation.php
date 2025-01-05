@@ -1,6 +1,6 @@
 <?php
 // Include header
-include "includes/header.php";
+include "..\includes/header.php";
 
 if (!isset($_SESSION['user_id'])) { // Replace 'user_id' with the session variable you want to check
     // Redirect to the login page using the APP_URL
@@ -16,7 +16,7 @@ $customer_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : "Custo
 <html>
 <head>
     <title>Order Confirmation</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,12 +61,12 @@ $customer_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : "Custo
     <h2>Thank You, <?= $customer_name; ?>!</h2>
     <p>Your order has been placed successfully.</p>
     <p>We will deliver your order to your address soon.</p>
-    <a href="product.php">Continue Shopping</a>
+    <a href="action/product.php">Continue Shopping</a>
 </div>
 </body>
 </html>
 
 <?php
 // Include footer
-// include "includes/footer.php";
+// include "..\includes/footer.php";
 ?>

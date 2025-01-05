@@ -1,7 +1,7 @@
 <?php
 // Include header
-include "includes/header.php";
-include "includes/db.php";
+include "..\includes/header.php";
+include "..\includes/db.php";
 
 // Fetch products from the database
 $sql = "SELECT id, name, description, price, image FROM products";
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Dynamic Product Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>
         .product {
             border: 1px solid #ccc;
@@ -67,7 +67,8 @@ $result = $conn->query($sql);
         // Output data for each product
         while ($row = $result->fetch_assoc()) {
             echo "<div class='product'>";
-            echo "<img src='" . htmlspecialchars($row['image']) . "' alt='" . htmlspecialchars($row['name']) . "'>";
+            echo "<img src=\"../" . htmlspecialchars($row['image']) . "\" alt=\"" . htmlspecialchars($row['name']) . "\">";
+
             echo "<h3>" . htmlspecialchars($row['name']) . "</h3>";
             echo "<p>Price: $" . htmlspecialchars($row['price']) . "</p>";
 
@@ -92,5 +93,5 @@ $result = $conn->query($sql);
 $conn->close();
 
 // Include footer
-// include "includes/footer.php";
+// include "..\includes/footer.php";
 ?>

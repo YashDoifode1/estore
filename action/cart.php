@@ -3,7 +3,7 @@
 
 
 // Include header
-include "includes/header.php";
+include "..\includes/header.php";
 
 // Check if the cart exists in the session
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
@@ -58,7 +58,7 @@ if (isset($_POST['update_quantity'])) {
 <html>
 <head>
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -157,7 +157,7 @@ if (isset($_POST['update_quantity'])) {
     <?php if (!empty($cart)): ?>
         <?php foreach ($cart as $item): ?>
             <div class="cart-item">
-            <img src="<?= isset($item['image']) ? htmlspecialchars($item['image']) : 'images/default.jfif'; ?>" alt="<?= htmlspecialchars($item['name']); ?>">
+            <img src="..\<?= isset($item['image']) ? htmlspecialchars($item['image']) : 'images/default.jfif'; ?>" alt="<?= htmlspecialchars($item['name']); ?>">
 
 
                 <div class="cart-item-details">
@@ -186,5 +186,5 @@ if (isset($_POST['update_quantity'])) {
 
 <?php
 // Include footer
-// include "includes/footer.php";
+// include "..\includes/footer.php";
 ?>

@@ -1,8 +1,8 @@
 <?php
 // Start session and include necessary files
 
-include "includes/header.php";
-include "includes/db.php";
+include "..\includes/header.php";
+include "..\includes/db.php";
 
 // if (!isset($_SESSION['user_id'])) { // Replace 'user_id' with the session variable you want to check
 //     // Redirect to the login page using the APP_URL
@@ -65,7 +65,7 @@ if (isset($_POST['add_to_cart'])) {
 <html>
 <head>
     <title>Product Info</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="..\css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -130,7 +130,7 @@ if (isset($_POST['add_to_cart'])) {
 <body>
 <div class="info-container">
     <?php if ($product): ?>
-        <img src="<?= htmlspecialchars($product['image']); ?>" alt="<?= htmlspecialchars($product['name']); ?>">
+        <img src="..\<?= htmlspecialchars($product['image']); ?>" alt="<?= htmlspecialchars($product['name']); ?>">
         <h2><?= htmlspecialchars($product['name']); ?></h2>
         <p><?= htmlspecialchars($product['description']); ?></p>
         <p><strong>Price: $<?= htmlspecialchars($product['price']); ?></strong></p>
@@ -156,5 +156,5 @@ if (isset($_POST['add_to_cart'])) {
 
 <?php
 // Include footer
-// include "includes/footer.php";
+// include "..\includes/footer.php";
 ?>
