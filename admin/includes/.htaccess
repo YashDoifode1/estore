@@ -1,0 +1,4 @@
+<FilesMatch "db.php|auth.php">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
