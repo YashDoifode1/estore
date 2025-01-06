@@ -186,5 +186,5 @@ if (isset($_POST['update_quantity'])) {
 
 <?php
 // Include footer
-// include "..\includes/footer.php";
+include "..\includes/footer.php";
 ?>

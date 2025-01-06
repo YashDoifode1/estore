@@ -156,5 +156,5 @@ if (isset($_POST['add_to_cart'])) {
 
 <?php
 // Include footer
-// include "..\includes/footer.php";
+include "..\includes/footer.php";
 ?>

@@ -61,7 +61,7 @@ if (!$result) {
             while($row = $result->fetch_assoc()) {
                 // Create a link with category_id as a URL parameter
                 echo '<div class="card">';
-                echo '<a href="category.php?id=' . $row["id"] . '">' . $row["name"] . '</a>';
+                echo '<a href="action/category.php?id=' . $row["id"] . '">' . $row["name"] . '</a>';
                 echo '</div>';
             }
         } else {
@@ -106,16 +106,9 @@ $result = $conn->query($query);
 
    
   
-
-    <div class="about-us-container">
-  <h1 class="title">About Us</h1>
-  <p class="description">
-    We are a passionate team dedicated to revolutionizing the digital art world through blockchain technology.
-  </p>
-  <img src="rsc/about.jpg" alt="About Us Image" class="image">
-</div>
-    
-    
+<?php include("about.html"); ?>
+   
 </body>
 <!--  -->
 </html>
+<?php include("INCLUDES/FOOTER.PHP"); ?>

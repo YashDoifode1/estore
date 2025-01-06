@@ -68,5 +68,5 @@ $customer_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : "Custo
 
 <?php
 // Include footer
-// include "..\includes/footer.php";
+include "..\includes/footer.php";
 ?>

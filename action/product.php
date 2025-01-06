@@ -93,5 +93,5 @@ $result = $conn->query($sql);
 $conn->close();
 
 // Include footer
-// include "..\includes/footer.php";
+include "..\includes/footer.php";
 ?>

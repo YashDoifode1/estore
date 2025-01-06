@@ -197,5 +197,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 // Include footer
-// include "..\includes/footer.php";
+include "..\includes/footer.php";
 ?>

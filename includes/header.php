@@ -10,6 +10,12 @@ $is_logged_in = isset($_SESSION['user_id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the best deals on electronics, fashion, home décor, gadgets, and more at eStore. Secure payment, fast shipping, and unbeatable prices!">
+<meta name="keywords" content="eStore, online shopping, electronics, gadgets, fashion, home decor, best deals, discounts, secure payment, fast shipping">
+<meta name="robots" content="index, follow">
+<meta name="author" content="eStore">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>E-Commerce Website</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,7 +24,7 @@ $is_logged_in = isset($_SESSION['user_id']);
     <div class="logo">E-Shop</div>
     <nav>
         <a href="<?= APP_URL ?>/">Home</a>
-        <a href="<?= APP_URL ?>/product.php">Products</a>
+        <a href="<?= APP_URL ?>/action/product.php">Products</a>
         <?php if ($is_logged_in): ?>
             <a href="<?= APP_URL ?>/account/profile.php">Profile</a>
             <a href="<?= APP_URL ?>/logout.php">Logout</a>

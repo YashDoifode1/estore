@@ -106,3 +106,4 @@ if ($category_result->num_rows > 0) {
 <?php
 $conn->close();
 ?>
+<?php include("..\INCLUDES/FOOTER.PHP"); ?>
