@@ -108,18 +108,18 @@ footer {
         <div class="footer-section links">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="products.php">Products</a></li>
+                <!-- <li><a href="about.html">About Us</a></li> -->
+                <!-- <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li> -->
             </ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-section contact">
             <h2>Contact Us</h2>
-            <p><i class="fas fa-map-marker-alt"></i> 123 eShop Street, Mumbai, India</p>
+            <p><i class="fas fa-map-marker-alt"></i> Dhamna Amravati Road Nagpur 440023</p>
             <p><i class="fas fa-envelope"></i> support@eshop.com</p>
             <p><i class="fas fa-phone"></i> +91 98765 43210</p>
         </div>

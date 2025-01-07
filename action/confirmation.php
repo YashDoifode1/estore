@@ -61,7 +61,7 @@ $customer_name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : "Custo
     <h2>Thank You, <?= $customer_name; ?>!</h2>
     <p>Your order has been placed successfully.</p>
     <p>We will deliver your order to your address soon.</p>
-    <a href="action/product.php">Continue Shopping</a>
+    <a href="/action/product.php">Continue Shopping</a>
 </div>
 </body>
 </html>

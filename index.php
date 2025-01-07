@@ -60,7 +60,10 @@ if (!$result) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
                 // Create a link with category_id as a URL parameter
+                
+
                 echo '<div class="card">';
+                
                 echo '<a href="action/category.php?id=' . $row["id"] . '">' . $row["name"] . '</a>';
                 echo '</div>';
             }

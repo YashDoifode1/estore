@@ -31,17 +31,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role']; // Store role in session
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['phone'] = $user['phone'];
 
-            header("Location: ..\index.php"); // Redirect to dashboard
+            header("Location: ..\index.php "); // Redirect to dashboard
             exit();
         } else {
             // Invalid password
-            header("Location: login.php?error=invalid_credentials");
+            header("Location: ..\login.php?error=invalid_credentials");
             exit();
         }
     } else {
         // User not found
-        header("Location: login.php?error=invalid_credentials");
+        header("Location: ..\login.php?error=invalid_credentials");
         exit();
     }
 
