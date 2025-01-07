@@ -109,7 +109,7 @@ $result = $conn->query($query);
 
    
   
-<?php include("about.html"); ?>
+<?php include("includes/about.html"); ?>
    
 </body>
 <!--  -->

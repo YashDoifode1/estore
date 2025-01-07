@@ -1,4 +1,4 @@
-ErrorDocument 404 http://localhost/estore/error404.html
+ErrorDocument 404 http://localhost/estore/includes/error404.html
 
 
 

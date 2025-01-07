@@ -1,0 +1,12 @@
+[2025-01-07 13:10:48] IP: ::1 - URL: /estore/action/product.php
+[2025-01-07 13:10:48] IP: ::1 - URL: /estore/action/product.php
+[2025-01-07 13:10:50] IP: ::1 - URL: /estore/action/info.php?product_id=2
+[2025-01-07 13:10:50] IP: ::1 - URL: /estore/action/info.php?product_id=2
+[2025-01-07 13:12:10] IP: ::1 - URL: http://localhost/estore/action/product.php
+[2025-01-07 13:12:10] IP: ::1 - URL: http://localhost/estore/action/product.php
+[2025-01-07 13:12:12] IP: ::1 - URL: http://localhost/estore/action/info.php?product_id=3
+[2025-01-07 13:12:12] IP: ::1 - URL: http://localhost/estore/action/info.php?product_id=3
+[2025-01-07 13:14:15] IP: ::1 - URL: http://localhost/estore/action/product.php - Referrer: http://localhost/estore/ - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:14:15] IP: ::1 - URL: http://localhost/estore/action/product.php - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:14:17] IP: ::1 - URL: http://localhost/estore/action/info.php?product_id=2 - Referrer: http://localhost/estore/action/product.php - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:14:17] IP: ::1 - URL: http://localhost/estore/action/info.php?product_id=2 - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36

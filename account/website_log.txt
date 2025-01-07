@@ -1,0 +1,8 @@
+[2025-01-07 13:10:52] IP: ::1 - URL: /estore/account/profile.php
+[2025-01-07 13:10:53] IP: ::1 - URL: /estore/account/profile.php
+[2025-01-07 13:10:55] IP: ::1 - URL: /estore/account/order.php
+[2025-01-07 13:10:55] IP: ::1 - URL: /estore/account/order.php
+[2025-01-07 13:12:15] IP: ::1 - URL: http://localhost/estore/account/profile.php
+[2025-01-07 13:12:15] IP: ::1 - URL: http://localhost/estore/account/profile.php
+[2025-01-07 13:14:11] IP: ::1 - URL: http://localhost/estore/account/profile.php - Referrer: http://localhost/estore/action/info.php?product_id=3 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:14:11] IP: ::1 - URL: http://localhost/estore/account/profile.php - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36

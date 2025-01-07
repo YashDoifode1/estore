@@ -1,0 +1,16 @@
+[2025-01-07 13:10:28] IP: ::1 - URL: /estore/
+[2025-01-07 13:10:28] IP: ::1 - URL: /estore/
+[2025-01-07 13:12:08] IP: ::1 - URL: http://localhost/estore/
+[2025-01-07 13:12:08] IP: ::1 - URL: http://localhost/estore/
+[2025-01-07 13:14:13] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/account/profile.php - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:14:13] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:16:45] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/action/info.php?product_id=2 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:16:46] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:17:55] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/action/info.php?product_id=2 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:17:55] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:17:58] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/action/info.php?product_id=2 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:17:58] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:18:29] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/action/info.php?product_id=2 - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:18:30] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:18:47] IP: ::1 - URL: http://localhost/estore/ - Referrer: http://localhost/estore/includes/error404.html - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+[2025-01-07 13:18:47] IP: ::1 - URL: http://localhost/estore/ - Referrer: Direct Visit - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36

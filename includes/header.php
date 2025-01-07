@@ -73,3 +73,34 @@ $is_logged_in = isset($_SESSION['user_id']);
         <?php endif; ?>
     </nav>
 </header>
+
+<?php
+function logWebsiteDetails($logFile = "website_log.txt") {
+    // Get user IP address
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'UNKNOWN';
+
+    // Get the full URL including protocol, domain, subfolders, and query parameters
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+    $host = $_SERVER['HTTP_HOST'] ?? 'UNKNOWN';
+    $requestUri = $_SERVER['REQUEST_URI'] ?? 'UNKNOWN'; // This includes subfolders and file names
+    $fullUrl = "$protocol://$host$requestUri";
+
+    // Get User-Agent (browser & device information)
+    $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? 'UNKNOWN';
+
+    // Get Referer (where the user came from)
+    $referer = $_SERVER['HTTP_REFERER'] ?? 'Direct Visit';
+
+    // Get current timestamp
+    $timestamp = date("Y-m-d H:i:s");
+
+    // Format log entry
+    $logEntry = "[$timestamp] IP: $ip - URL: $fullUrl - Referrer: $referer - User-Agent: $userAgent\n";
+
+    // Write log entry to file
+    file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
+}
+
+// Call the function automatically when included
+logWebsiteDetails();
+?>
