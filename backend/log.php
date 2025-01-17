@@ -1,29 +1,17 @@
 <?php
-include "../includes/db.php"; // Ensure the DB connection is set up
+include "..\includes/db.php"; // Ensure the DB connection is set up
 
+// Start session
 session_start();
-
-// Google reCAPTCHA Secret Key
-$recaptcha_secret = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
-";
 
 // Check if form data is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Retrieve form data
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Validate reCAPTCHA
-    $recaptcha_response = $_POST['g-recaptcha-response'];
-    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
-    $response_data = json_decode($verify);
-
-    if (!$response_data->success) {
-        header("Location: ../login.php?error=Invalid reCAPTCHA");
-        exit();
-    }
-
     // Prepare and execute query to fetch user by username
-    $sql = "SELECT id, username, password, role, email, phone FROM users WHERE username = ?";
+    $sql = "SELECT id, username, password, role FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
@@ -39,27 +27,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Verify the password hash
         if (password_verify($password, $user['password'])) {
+            // Successful login
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role']; // Store role in session
             $_SESSION['email'] = $user['email'];
             $_SESSION['phone'] = $user['phone'];
 
-            header("Location: ../index.php"); // Redirect to home page
+            header("Location: ..\index.php "); // Redirect to dashboard
             exit();
         } else {
-            header("Location: ../login.php?error=Invalid credentials");
+            // Invalid password
+            header("Location: ..\login.php?error=invalid_credentials");
             exit();
         }
     } else {
-        header("Location: ../login.php?error=Invalid credentials");
+        // User not found
+        header("Location: ..\login.php?error=invalid_credentials");
         exit();
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    header("Location: ../login.php");
+    // Invalid request method
+    header("Location: login.php");
     exit();
 }
 ?>

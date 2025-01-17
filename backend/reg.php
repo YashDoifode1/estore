@@ -44,7 +44,7 @@ if ($uploadOk && move_uploaded_file($_FILES["image"]["tmp_name"], $target_file))
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        header("Location: ..\index.php");
+        header("Location: ..\login.php");
         exit();
     } else {
         die("Error inserting data: " . $stmt->error);

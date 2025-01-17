@@ -113,7 +113,7 @@ $conn->close();
 <body>
     <div class="profile-container">
         <h2>Edit Profile</h2>
-        <img src="..\<?= htmlspecialchars($user['image']) ?>" alt="Profile Picture">
+        <img src="<?= htmlspecialchars($user['image']) ?>" alt="Profile Picture">
         
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>" required placeholder="Full Name">
