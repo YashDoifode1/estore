@@ -36,6 +36,53 @@ if (!$result) {
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
+.categories {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    /* object-fit: cover; */
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.category-name {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
 </style>
 <body>
     <!-- Header -->
@@ -50,8 +97,8 @@ if (!$result) {
     </div>
 </div>
 
-    <!-- Featured Categories -->
-    <section id="categories" class="categories">
+   <!-- Featured Categories -->
+<section id="categories" class="categories">
     <h2 class="section-title">Featured Categories</h2>
     <div class="grid">
         <?php
@@ -59,12 +106,11 @@ if (!$result) {
         if ($result->num_rows > 0) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
-                // Create a link with category_id as a URL parameter
-                
-
                 echo '<div class="card">';
-                
-                echo '<a href="action/category.php?id=' . $row["id"] . '">' . $row["name"] . '</a>';
+                echo '<a href="action/category.php?id=' . $row["id"] . '">';
+                echo '<img src="' . $row["image"] . '" alt="' . $row["name"] . '">';
+                echo '<div class="category-name">' . $row["name"] . '</div>';
+                echo '</a>';
                 echo '</div>';
             }
         } else {
@@ -99,7 +145,7 @@ $result = $conn->query($query);
                 <img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" class="product-img">
                 <h3><?php echo $row['name']; ?></h3>
                 <p>$<?php echo number_format($row['price'], 2); ?></p>
-                <a href="action/product.php" class="view-more-btn">View More</a>
+                <a href="action/product.php" class="cta-button">View More</a>
             </div>
             
         <?php } ?>

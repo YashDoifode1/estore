@@ -89,18 +89,59 @@ footer {
     margin-top: 20px;
 }
 </STYle>
+<?php
+// Database connection
+$conn = new mysqli("localhost", "root", "", "estore");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Validate input
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // Insert into database
+        $stmt = $conn->prepare("INSERT INTO newsletter_subscribers (email) VALUES (?)");
+        $stmt->bind_param("s", $email);
+        if ($stmt->execute()) {
+            echo "<script>alert('Subscription successful!'); window.location.href = 'index.php';</script>";
+        } else {
+            echo "<script>alert('Error: Unable to subscribe!'); window.location.href = 'index.php';</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid email format!'); window.location.href = 'index.php';</script>";
+    }
+}
+
+$conn->close();
+?>
+
+<?php
+// Database connection
+$conn = new mysqli("localhost", "root", "", "estore");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch settings data
+$sql = "SELECT * FROM settings LIMIT 1";
+$result = $conn->query($sql);
+$settings = $result->fetch_assoc();
+?>
+
 <footer>
     <div class="footer-container">
 
         <!-- Company Info -->
         <div class="footer-section about">
-            <h2>eShop</h2>
-            <p>Your one-stop destination for high-quality products at unbeatable prices.</p>
+            <h2><?php echo htmlspecialchars($settings['site_name']); ?></h2>
+            <p><?php echo htmlspecialchars($settings['about']); ?></p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="<?php echo htmlspecialchars($settings['facebook']); ?>"><i class="fab fa-facebook-f"></i></a>
+                <a href="<?php echo htmlspecialchars($settings['twitter']); ?>"><i class="fab fa-twitter"></i></a>
+                <a href="<?php echo htmlspecialchars($settings['instagram']); ?>"><i class="fab fa-instagram"></i></a>
+                <a href="<?php echo htmlspecialchars($settings['linkedin']); ?>"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
 
@@ -110,32 +151,24 @@ footer {
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
-                <!-- <li><a href="about.html">About Us</a></li> -->
-                <!-- <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li> -->
             </ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-section contact">
             <h2>Contact Us</h2>
-            <p><i class="fas fa-map-marker-alt"></i> Dhamna Amravati Road Nagpur 440023</p>
-            <p><i class="fas fa-envelope"></i> support@eshop.com</p>
-            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($settings['address']); ?></p>
+            <p><i class="fas fa-envelope"></i> <?php echo htmlspecialchars($settings['email']); ?></p>
+            <p><i class="fas fa-phone"></i> <?php echo htmlspecialchars($settings['phone']); ?></p>
         </div>
 
         <!-- Newsletter Subscription -->
         <div class="footer-section newsletter">
             <h2>Subscribe to Our Newsletter</h2>
-            <form action="#">
-                <input type="email" placeholder="Enter your email" required>
+            <form action="" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
     </div>
-
-    <!-- Copyright -->
-    <!-- <div class="footer-bottom">
-        <p>&copy; 2025 eShop. All rights reserved.</p>
-    </div> -->
 </footer>

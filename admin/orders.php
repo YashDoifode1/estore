@@ -143,7 +143,7 @@ th {
                 <td><?php echo $row['order_status']; ?></td>
                 <td><?php echo $row['created_at']; ?></td>
                 <td>
-                    <a href="orders.php?view=<?php echo $row['id']; ?>">View Items</a>
+                    <button href="orders.php?view=<?php echo $row['id']; ?>">View Items</button>
                     <button onclick="updateStatus('<?php echo $row['id']; ?>', '<?php echo $row['order_status']; ?>')">Update Status</button>
                 </td>
             </tr>

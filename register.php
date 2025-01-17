@@ -1,6 +1,5 @@
 <?php include "includes/header.php"?>
 
-<!-- Registration Form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,32 +8,32 @@
     <title>Registration Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             height: 100vh;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
         }
 
         .registration-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             background: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
         }
 
         h2 {
             margin-bottom: 20px;
             color: #333;
+            font-size: 24px;
         }
 
         label {
@@ -50,10 +49,10 @@
         input[type="password"],
         input[type="file"] {
             width: 90%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
             font-size: 14px;
         }
 
@@ -61,39 +60,57 @@
             background-color: #28a745;
             color: #fff;
             border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
+            border-radius: 6px;
+            padding: 12px 15px;
             font-size: 16px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: 0.3s;
         }
 
         button:hover {
             background-color: #218838;
         }
 
+        /* Error Message */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
         @media (max-width: 480px) {
             .registration-container {
-                padding: 15px;
+                padding: 20px;
             }
 
             input[type="text"],
             input[type="email"],
             input[type="password"],
             input[type="file"] {
-                font-size: 12px;
+                font-size: 14px;
             }
 
             button {
-                font-size: 14px;
+                font-size: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="registration-container">
-        <h2>Registration</h2>
+    <center><div class="registration-container">
+        <h2>Create an Account</h2>
+
+        <!-- Display error messages -->
+        <?php
+        // session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<div class="error-message">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']); // Remove error message after displaying
+        }
+        ?>
+
         <form action="backend/reg.php" method="post" enctype="multipart/form-data">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -109,10 +126,10 @@
 
             <button type="submit">Register</button>
         </form>
-    </div>
+    </div></center>
 </body>
 </html>
 
 <?php 
-// include "includes/footer.php"
+include "includes/footer.php"
 ?>
